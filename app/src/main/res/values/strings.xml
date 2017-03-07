@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Gank4k</string>
+    <string name="network_disconnected">网络无连接，请检查网络!</string>
+    <string name="server_error">服务端错误，请稍后再试!</string>
+    <string name="network_timeout">网络不畅，请稍后再试!</string>
+    <string name="parse_error">数据解析异常</string>
+    <string name="server_is_busy">服务器繁忙，请稍后再试！</string>
+</resources>

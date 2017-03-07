@@ -1,0 +1,92 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    ext.kotlin_version = '1.1.0'
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.3.0'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "org.jetbrains.kotlin:kotlin-android-extensions:$kotlin_version"
+        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8' //for dagger
+        classpath 'me.tatarka:gradle-retrolambda:3.6.0'// for lambda
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        maven { url "https://jitpack.io" }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+ext {
+    kotlinVersion = "1.1.0"
+    supportLibVersion = "25.2.0"
+    okhttpVersion = "3.6.0"
+    retrofitVersion = "2.2.0"
+    rxjavaVersion = "1.2.1"
+    rxAndroidVersion = "1.2.1"
+    rxBindingVersion = "1.0.1"
+    rxjava2Version = "2.0.1"
+    rxAndroid2Version = "2.0.1"
+    daggerVersion = "2.9"
+    glideVersion = "3.7.0"
+    butterKnifeVersion = "8.5.1"
+    multidexVersion = "1.0.1"
+    rxPermissionVersion = "0.9.2@aar"
+    javaxAnnotationVersion = "10.0-b28"
+
+    dependencies = [
+            // Dagger2
+            daggerCompiler          : "com.google.dagger:dagger-compiler:$daggerVersion",
+            dagger                  : "com.google.dagger:dagger:$daggerVersion",
+            javaxAnnotation         : "org.glassfish:javax.annotation:$javaxAnnotationVersion",
+
+            butterKnife             : "com.jakewharton:butterknife:$butterKnifeVersion",
+            butterKnifeCompiler     : "com.jakewharton:butterknife-compiler:$butterKnifeVersion",
+
+            // Rx
+            rxJava                  : "io.reactivex:rxjava:$rxjavaVersion",
+            rxAndroid               : "io.reactivex:rxandroid:$rxAndroidVersion",
+            rxPermission            : "com.tbruyelle.rxpermissions:rxpermissions:$rxPermissionVersion",
+
+            rxJava2                 : "io.reactivex.rxjava2:rxjava:$rxjava2Version",
+            rxAndroid2              : "io.reactivex.rxjava2:rxandroid:$rxAndroid2Version",
+            rxPermission2           : "com.tbruyelle.rxpermissions2:rxpermissions:$rxPermissionVersion",
+
+            rxBinding               : "com.jakewharton.rxbinding:rxbinding:$rxBindingVersion",
+
+            // Http
+            okhttp3                 : "com.squareup.okhttp3:okhttp:$okhttpVersion",
+            okhttpLoggingInterceptor: "com.squareup.okhttp3:logging-interceptor:$okhttpVersion",
+            retrofit                : "com.squareup.retrofit2:retrofit:$retrofitVersion",
+            retrofitGsonConverter   : "com.squareup.retrofit2:converter-gson:$retrofitVersion",
+
+            retrofitRxjavaAdapter   : "com.squareup.retrofit2:adapter-rxjava:$retrofitVersion",
+            retrofitRxjavaAdapter2  : "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion",
+
+            glide                   : "com.github.bumptech.glide:glide:$glideVersion",
+
+            // support
+            supportMultidex         : "com.android.support:multidex:$multidexVersion",
+            supportAppCompat        : "com.android.support:appcompat-v7:$supportLibVersion",
+            supportDesign           : "com.android.support:design:$supportLibVersion",
+            supportRecyclerview     : "com.android.support:recyclerview-v7:$supportLibVersion",
+            supportAnnotations      : "com.android.support:support-annotations:$supportLibVersion",
+            supportCardView         : "com.android.support:cardview-v7:$supportLibVersion",
+
+            // kotlin
+            kotlinStdlib            : "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlinVersion",
+            kotlinReflect           : "org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion",
+    ]
+
+}
