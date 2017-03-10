@@ -5,4 +5,11 @@
     <string name="network_timeout">网络不畅，请稍后再试!</string>
     <string name="parse_error">数据解析异常</string>
     <string name="server_is_busy">服务器繁忙，请稍后再试！</string>
+
+    <array name="list_tab_name">
+        <string name="android">Android</string>
+        <string name="ios">iOS</string>
+        <string name="girls">妹子</string>
+        <string name="favourite">收藏</string>
+    </array>
 </resources>

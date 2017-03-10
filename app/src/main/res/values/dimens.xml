@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="main_tab_icon_size">20dp</dimen>
+    <dimen name="main_tab_height">48dp</dimen>
+    <dimen name="main_tab_margin">30dp</dimen>
+    <dimen name="main_tab_search_btn_padding">14dp</dimen>
+
+
+    <dimen name="list_tab_height">48dp</dimen>
+</resources>

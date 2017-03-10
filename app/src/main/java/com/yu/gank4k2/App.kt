@@ -6,10 +6,13 @@ import com.yu.gank4k2.di.moudle.ApiModule
 import com.yu.gank4k2.di.moudle.AppModule
 import com.yu.gank4k2.util.AppManager
 import com.yu.gank4k2.util.Constant
+import io.realm.Realm
 import me.yu.drxx.di.component.ApiComponent
 import me.yu.drxx.di.component.DaggerApiComponent
 import okhttp3.HttpUrl
 import okhttp3.Interceptor
+
+
 
 
 /**
@@ -27,6 +30,8 @@ class App : Application() {
                 .appModule(AppModule(this))
                 .apiModule(ApiModule(HttpUrl.parse(Constant.BASE_URL), interceptors))
                 .build()
+
+        Realm.init(this)
     }
 
     // 这里返回okhttp的拦截器的集合，这里只是一个示例，添加一个header
