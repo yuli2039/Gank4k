@@ -11,7 +11,7 @@ import com.yu.gank4k2.R
 /**
  * Created by yu on 2017/3/7.
  */
-class Fragment1 : Fragment() {
+class SettingFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater!!.inflate(R.layout.fragment_test, null)
     }

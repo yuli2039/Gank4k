@@ -3,19 +3,23 @@ package com.yu.gank4k2.ui.activity
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentPagerAdapter
-import android.support.v4.view.ViewPager
+import android.support.v4.view.PagerAdapter
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.LinearLayout
+import com.ogaclejapan.smarttablayout.SmartTabLayout
 import com.yu.gank4k2.R
-import com.yu.gank4k2.ui.fragment.Fragment1
-import com.yu.gank4k2.ui.fragment.Fragment3
-import com.yu.gank4k2.ui.fragment.ListFragment
+import com.yu.gank4k2.ui.fragment.RandomFragment
+import com.yu.gank4k2.ui.fragment.SettingFragment
+import com.yu.gank4k2.ui.fragment.CategoryFragment
 import kotlinx.android.synthetic.main.activity_main.*
 import me.yu.drxx.ui.BaseEmptyActivity
 
 class MainActivity : BaseEmptyActivity() {
 
-    val fragmentList: List<Fragment> by lazy {
-        arrayListOf(Fragment1(), ListFragment(), Fragment3())
-    }
+    val fragmentList: List<Fragment> = arrayListOf(RandomFragment(), CategoryFragment(), SettingFragment())
 
     override val layoutId: Int
         get() = R.layout.activity_main
@@ -23,27 +27,22 @@ class MainActivity : BaseEmptyActivity() {
     override fun afterInitView() {
 
         vpContent.adapter = RootPagerAdapter(supportFragmentManager, fragmentList)
-        vpContent.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
-            override fun onPageScrollStateChanged(state: Int) {}
 
-            override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {}
-
-            override fun onPageSelected(position: Int) {
+        stlMainTab.setCustomTabView(object : SmartTabLayout.TabProvider {
+            override fun createTabView(container: ViewGroup?, position: Int, adapter: PagerAdapter?): View {
+                val tabItem = LayoutInflater.from(this@MainActivity).inflate(R.layout.layout_main_tab_item, null)
+                tabItem.layoutParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
+                        LinearLayout.LayoutParams.MATCH_PARENT)
+                val imageView = tabItem.findViewById(R.id.ivTab) as ImageView
                 when (position) {
-                    0 -> rgMainTab.check(R.id.rbRandom)
-                    1 -> rgMainTab.check(R.id.rbList)
-                    2 -> rgMainTab.check(R.id.rbUser)
+                    0 -> imageView.setImageResource(R.drawable.selector_main_tab_random)
+                    1 -> imageView.setImageResource(R.drawable.selector_main_tab_list)
+                    2 -> imageView.setImageResource(R.drawable.selector_main_tab_user)
                 }
+                return tabItem
             }
         })
-
-        rgMainTab.setOnCheckedChangeListener { group, checkedId ->
-            when (checkedId) {
-                R.id.rbRandom -> vpContent.currentItem = 0
-                R.id.rbList -> vpContent.currentItem = 1
-                R.id.rbUser -> vpContent.currentItem = 2
-            }
-        }
+        stlMainTab.setViewPager(vpContent)
 
         ibtnSearch.setOnClickListener {
             toast("asdf")

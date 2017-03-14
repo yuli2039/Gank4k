@@ -8,6 +8,6 @@ import rx.Observable
 
 interface ApiService {
 
-    @GET("api/data/Android/{pageNum}/{page}")
-    fun gank(@Path("pageNum") pageNum: String, @Path("page") page: String): Observable<HttpResult<List<GankEntity>>>
+    @GET("api/data/{type}/{pageNum}/{page}")
+    fun loadCategoryData(@Path("type") type: String, @Path("pageNum") pageNum: String, @Path("page") page: String): Observable<HttpResult<List<GankEntity>>>
 }

@@ -26,7 +26,7 @@ class App : Application() {
         context = applicationContext
         AppManager.getInstance().init(this)
 
-        appComponent = DaggerApiComponent.builder()
+        apiComponent = DaggerApiComponent.builder()
                 .appModule(AppModule(this))
                 .apiModule(ApiModule(HttpUrl.parse(Constant.BASE_URL), interceptors))
                 .build()
@@ -38,7 +38,7 @@ class App : Application() {
     val interceptors: List<Interceptor> = arrayListOf(
             Interceptor { chain ->
                 val request = chain.request().newBuilder()
-                        .addHeader("token", "qwe")
+//                        .addHeader("token", "qwe")
                         .build()
                 chain.proceed(request)
             }
@@ -47,7 +47,7 @@ class App : Application() {
     companion object {
         var context: Context? = null
             private set
-        var appComponent: ApiComponent? = null
+        var apiComponent: ApiComponent? = null
             private set
     }
 }

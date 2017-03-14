@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.ogaclejapan.smarttablayout.SmartTabLayout
+        android:id="@+id/stlListTab"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/list_tab_height"
+        app:stl_clickable="true"
+        app:stl_defaultTabTextAllCaps="false"
+        app:stl_defaultTabTextColor="@drawable/selector_list_tab_txt_color"
+        app:stl_defaultTabTextSize="@dimen/txt14"
+        app:stl_distributeEvenly="true"
+        app:stl_dividerThickness="@dimen/list_tab_0dp"
+        app:stl_indicatorColor="@color/colorAccent"
+        app:stl_indicatorInterpolation="linear"
+        app:stl_indicatorThickness="@dimen/list_tab_indicator_thickness"
+        app:stl_indicatorWidth="auto"
+        app:stl_overlineThickness="@dimen/list_tab_0dp"
+        app:stl_titleOffset="auto_center"
+        app:stl_underlineThickness="@dimen/list_tab_0dp" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vpList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>
