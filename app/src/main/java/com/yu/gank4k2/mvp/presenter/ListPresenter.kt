@@ -39,8 +39,8 @@ class ListPresenter
                         .compose(DefaultTransformer<List<GankEntity>>())
                         .filter { mView != null }
                         .subscribe(object : ApiSubscriber<List<GankEntity>>(mView) {
-                            override fun onNext(t: List<GankEntity>?) {
-                                if (t == null || t.isEmpty()) {
+                            override fun onNext(t: List<GankEntity>) {
+                                if (t.isEmpty()) {
                                     mView?.onNoMore()
                                 } else {
                                     mView?.onLoadMore(t)

@@ -10,6 +10,7 @@ data class GankEntity(
         var id: String?,
         var createdAt: String?,
         var desc: String?,
+        var images: List<String>?,
         var publishedAt: String?,
         var source: String?,
         var type: String?,

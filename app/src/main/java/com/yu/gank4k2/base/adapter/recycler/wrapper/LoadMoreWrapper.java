@@ -191,7 +191,7 @@ public class LoadMoreWrapper extends RecyclerView.Adapter<RecyclerView.ViewHolde
      */
     public void loadMoreComplete() {
         reset();
-        mInnerAdapter.notifyDataSetChanged();
+//        mInnerAdapter.notifyDataSetChanged();
     }
 
     /**

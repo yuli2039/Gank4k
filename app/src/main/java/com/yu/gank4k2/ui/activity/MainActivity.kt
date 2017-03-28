@@ -11,13 +11,13 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import com.ogaclejapan.smarttablayout.SmartTabLayout
 import com.yu.gank4k2.R
+import com.yu.gank4k2.base.BaseActivity
+import com.yu.gank4k2.ui.fragment.CategoryFragment
 import com.yu.gank4k2.ui.fragment.RandomFragment
 import com.yu.gank4k2.ui.fragment.SettingFragment
-import com.yu.gank4k2.ui.fragment.CategoryFragment
 import kotlinx.android.synthetic.main.activity_main.*
-import me.yu.drxx.ui.BaseEmptyActivity
 
-class MainActivity : BaseEmptyActivity() {
+class MainActivity : BaseActivity() {
 
     val fragmentList: List<Fragment> = arrayListOf(RandomFragment(), CategoryFragment(), SettingFragment())
 
@@ -45,9 +45,12 @@ class MainActivity : BaseEmptyActivity() {
         stlMainTab.setViewPager(vpContent)
 
         ibtnSearch.setOnClickListener {
-            toast("asdf")
             // todo
         }
+    }
+
+    override fun injectComponent() {
+
     }
 
     private class RootPagerAdapter(fm: FragmentManager, val fmts: List<Fragment>)

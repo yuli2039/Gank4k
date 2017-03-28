@@ -47,7 +47,7 @@ public class DefaultLoadMoreFooter extends LinearLayout implements ILoadMore {
         mText.setTextSize(14);
         addView(mText);
 
-        setState(Status.LOADING);
+        setState(Status.COMPLETE);
     }
 
     @Override
