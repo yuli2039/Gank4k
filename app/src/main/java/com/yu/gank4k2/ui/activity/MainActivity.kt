@@ -43,14 +43,6 @@ class MainActivity : BaseActivity() {
             }
         })
         stlMainTab.setViewPager(vpContent)
-
-        ibtnSearch.setOnClickListener {
-            // todo
-        }
-    }
-
-    override fun injectComponent() {
-
     }
 
     private class RootPagerAdapter(fm: FragmentManager, val fmts: List<Fragment>)

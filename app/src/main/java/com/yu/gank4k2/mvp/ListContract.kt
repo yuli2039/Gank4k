@@ -2,7 +2,7 @@ package me.yu.drxx.mvp
 
 import com.yu.gank4k2.base.BaseModel
 import com.yu.gank4k2.base.BaseView
-import com.yu.gank4k2.rx.HttpResult
+import com.yu.gank4k2.http.HttpResult
 import me.yu.drxx.entity.GankEntity
 import rx.Observable
 
@@ -11,8 +11,8 @@ import rx.Observable
  */
 interface ListContract {
     interface View : BaseView {
-        fun onRefresh(data: List<GankEntity>?)
-        fun onLoadMore(data: List<GankEntity>?)
+        fun onRefresh(data: List<GankEntity>)
+        fun onLoadMore(data: List<GankEntity>)
         fun onNoMore()
     }
 

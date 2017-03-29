@@ -13,8 +13,9 @@ import javax.inject.Inject
  * Created by yu on 2016/10/25.
  */
 class ListPresenter
-@Inject constructor(view: ListContract.View, model: ListModel)
-    : BasePresenter<ListContract.View, ListModel>(view, model), ListContract.Presenter {
+@Inject constructor() : BasePresenter<ListContract.View>(), ListContract.Presenter {
+
+    @Inject lateinit var mModel: ListModel
 
     var pageIndex = 1
 

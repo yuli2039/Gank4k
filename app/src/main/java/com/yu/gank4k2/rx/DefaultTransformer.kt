@@ -3,6 +3,7 @@ package com.yu.gank4k2.rx
 import android.content.res.Resources
 import com.yu.gank4k2.App
 import com.yu.gank4k2.R
+import com.yu.gank4k2.http.HttpResult
 import com.yu.gank4k2.util.NetUtils
 import rx.Observable
 import rx.android.schedulers.AndroidSchedulers

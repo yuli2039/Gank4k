@@ -8,9 +8,14 @@ import rx.subscriptions.CompositeSubscription
 
  * @author yu
  */
-abstract class BasePresenter<V : BaseView, M : BaseModel>(protected var mView: V?, protected var mModel: M) {
+abstract class BasePresenter<V : BaseView> {
 
-    private var mCompositeSubscription: CompositeSubscription? = null
+    protected var mView: V? = null
+    private val mCompositeSubscription: CompositeSubscription = CompositeSubscription()
+
+    fun setView(view: V) {
+        this.mView = view
+    }
 
     /**
      * should be called in onDestory
@@ -24,17 +29,15 @@ abstract class BasePresenter<V : BaseView, M : BaseModel>(protected var mView: V
      * Unsubscribe
      */
     private fun onUnsubscribe() {
-        if (mCompositeSubscription != null && mCompositeSubscription!!.hasSubscriptions())
-            mCompositeSubscription!!.unsubscribe()
+        if (mCompositeSubscription.hasSubscriptions())
+            mCompositeSubscription.unsubscribe()
     }
 
     /**
      * addSubscription
      */
     protected fun addSubscription(subscribe: Subscription) {
-        if (mCompositeSubscription == null)
-            mCompositeSubscription = CompositeSubscription()
-        mCompositeSubscription!!.add(subscribe)
+        mCompositeSubscription.add(subscribe)
     }
 
 }

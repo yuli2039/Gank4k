@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/girls_item_height"
+    android:layout_marginLeft="@dimen/m15"
+    android:layout_marginRight="@dimen/m15"
+    android:layout_marginTop="@dimen/m15"
+    android:background="@drawable/shape_list_item_bg">
+
+    <com.yu.gank4k2.ui.widget.RoundImageView
+        android:id="@+id/ivImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent"
+        app:round_radius="@dimen/r8"
+        app:shape_mode="round_rect" />
+
+</FrameLayout>

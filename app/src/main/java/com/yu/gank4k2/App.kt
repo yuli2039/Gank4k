@@ -13,8 +13,6 @@ import okhttp3.HttpUrl
 import okhttp3.Interceptor
 
 
-
-
 /**
  * @author yu
  * *         Create on 2017/1/9.

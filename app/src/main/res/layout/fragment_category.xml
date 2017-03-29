@@ -13,7 +13,7 @@
         app:stl_clickable="true"
         app:stl_defaultTabTextAllCaps="false"
         app:stl_defaultTabTextColor="@drawable/selector_list_tab_txt_color"
-        app:stl_defaultTabTextSize="@dimen/txt14"
+        app:stl_defaultTabTextSize="@dimen/f4"
         app:stl_distributeEvenly="true"
         app:stl_dividerThickness="@dimen/list_tab_0dp"
         app:stl_indicatorColor="@color/colorAccent"

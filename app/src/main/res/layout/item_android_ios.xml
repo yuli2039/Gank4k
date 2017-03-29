@@ -1,26 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="160dp">
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/m12"
+    android:layout_marginRight="@dimen/m12"
+    android:layout_marginTop="@dimen/m10"
+    android:background="@drawable/shape_list_item_bg"
+    android:orientation="vertical"
+    android:padding="@dimen/m15">
 
-    <ImageView
-        android:id="@+id/ivImage"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@android:color/transparent"
-        android:scaleType="centerCrop"
-        android:src="@mipmap/ic_launcher" />
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/tvDesc"
+        <ImageView
+            android:id="@+id/ivImage"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@android:color/transparent"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/ic_launcher" />
+
+        <TextView
+            android:id="@+id/tvDesc"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/m5"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:padding="10dp"
+            android:textColor="@color/C5"
+            android:textSize="@dimen/f6"
+            tools:text="testtttt" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/line"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:background="@color/txtcc"
-        android:gravity="center"
-        android:padding="10dp"
-        android:text="testtttt" />
+        android:layout_height="@dimen/common_divider"
+        android:layout_margin="@dimen/m10"
+        android:background="@color/cardview_dark_background" />
 
-</FrameLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tvAuthor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:maxLines="1"
+            android:textColor="@color/C12"
+            tools:text="testtttt" />
+
+        <android.support.v4.widget.Space
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:maxLines="1"
+            android:textColor="@color/C12"
+            tools:text="testtttt" />
+    </LinearLayout>
+
+</LinearLayout>

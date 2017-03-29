@@ -1,6 +1,6 @@
 package me.yu.drxx.mvp.repository
 
-import com.yu.gank4k2.rx.HttpResult
+import com.yu.gank4k2.http.HttpResult
 import me.yu.drxx.entity.GankEntity
 import me.yu.drxx.http.ApiService
 import me.yu.drxx.mvp.ListContract

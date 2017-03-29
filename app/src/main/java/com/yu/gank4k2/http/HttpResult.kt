@@ -1,4 +1,4 @@
-package com.yu.gank4k2.rx
+package com.yu.gank4k2.http
 
 /**
  * Created by yu on 2016/10/25.

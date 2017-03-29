@@ -10,7 +10,6 @@
         <item name="android">Android</item>
         <item name="ios">iOS</item>
         <item name="girls">妹子</item>
-        <item name="favourite">收藏</item>
     </array>
 
     <!-- loadMoreFooter -->

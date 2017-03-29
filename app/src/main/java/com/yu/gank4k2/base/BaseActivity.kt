@@ -20,6 +20,8 @@ abstract class BaseActivity : AppCompatActivity() {
 
     protected abstract fun afterInitView()
 
-    protected abstract fun injectComponent()
+    open fun injectComponent(){
+
+    }
 
 }

@@ -5,6 +5,7 @@ import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentPagerAdapter
 import com.yu.gank4k2.R
 import com.yu.gank4k2.base.BaseFragment
+import com.yu.gank4k2.util.CategoryType
 import kotlinx.android.synthetic.main.fragment_category.*
 
 /**
@@ -13,10 +14,9 @@ import kotlinx.android.synthetic.main.fragment_category.*
 class CategoryFragment : BaseFragment() {
 
     val fragmentList: ArrayList<Fragment> = arrayListOf(
-            CategoryListFragment.newInstance(CategoryListFragment.TYPE_ANDROID),
-            CategoryListFragment.newInstance(CategoryListFragment.TYPE_IOS),
-            CategoryListFragment.newInstance(CategoryListFragment.TYPE_GIRLS),
-            SettingFragment()
+            CategoryListFragment.newInstance(CategoryType.ANDROID),
+            CategoryListFragment.newInstance(CategoryType.IOS),
+            CategoryListFragment.newInstance(CategoryType.GIRLS)
     )
 
     override val layoutId: Int
@@ -26,9 +26,6 @@ class CategoryFragment : BaseFragment() {
         val stringArray = activity.resources.getStringArray(R.array.category_tab_name)
         vpList.adapter = ListAdapter(fragmentManager, fragmentList, stringArray)
         stlListTab.setViewPager(vpList)
-    }
-
-    override fun injectComponent() {
     }
 
     private class ListAdapter(fm: FragmentManager, val fmts: List<Fragment>, val titles: Array<String>)

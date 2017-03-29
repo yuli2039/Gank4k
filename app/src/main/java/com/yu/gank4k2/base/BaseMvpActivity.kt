@@ -1,6 +1,5 @@
 package com.yu.gank4k2.base
 
-import android.text.TextUtils
 import android.widget.Toast
 import javax.inject.Inject
 
@@ -9,7 +8,7 @@ import javax.inject.Inject
  * inject presenter
  * @author yu
  */
-abstract class BaseMvpActivity<P : BasePresenter<*, *>> : BaseActivity(), BaseView {
+abstract class BaseMvpActivity<P : BasePresenter<*>> : BaseActivity(), BaseView {
 
     @Inject lateinit var mPresenter: P
 
@@ -17,6 +16,8 @@ abstract class BaseMvpActivity<P : BasePresenter<*, *>> : BaseActivity(), BaseVi
         mPresenter.destory()
         super.onDestroy()
     }
+
+    override abstract fun injectComponent()
 
     override fun hideLoading() {
 
@@ -26,8 +27,10 @@ abstract class BaseMvpActivity<P : BasePresenter<*, *>> : BaseActivity(), BaseVi
 
     }
 
-    override fun toast(msg: String?) {
-        if (!TextUtils.isEmpty(msg))
+    override fun toast(msg: String) {
+        if (msg.length > 10)
+            Toast.makeText(applicationContext, msg, Toast.LENGTH_LONG).show()
+        else
             Toast.makeText(applicationContext, msg, Toast.LENGTH_SHORT).show()
     }
 }

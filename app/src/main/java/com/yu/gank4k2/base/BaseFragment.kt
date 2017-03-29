@@ -23,7 +23,7 @@ abstract class BaseFragment : Fragment() {
 
     protected abstract val layoutId: Int
 
-    protected abstract fun injectComponent()
+    open fun injectComponent() {}
 
     protected abstract fun afterInitView()
 

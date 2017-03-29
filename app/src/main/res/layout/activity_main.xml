@@ -2,13 +2,14 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
+    android:background="@color/C3"
     android:layout_height="match_parent">
 
     <RelativeLayout
         android:id="@+id/rlTitle"
-        android:background="@color/colorAccent"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/main_tab_height">
+        android:layout_height="@dimen/main_tab_height"
+        android:background="@color/colorAccent">
 
         <com.ogaclejapan.smarttablayout.SmartTabLayout
             android:id="@+id/stlMainTab"
@@ -22,16 +23,6 @@
             app:stl_overlineThickness="@dimen/list_tab_0dp"
             app:stl_underlineThickness="@dimen/list_tab_0dp" />
 
-        <ImageButton
-            android:id="@+id/ibtnSearch"
-            android:layout_width="@dimen/main_tab_height"
-            android:layout_height="match_parent"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:background="@android:color/transparent"
-            android:padding="@dimen/main_tab_search_btn_padding"
-            android:scaleType="centerInside"
-            android:src="@drawable/selector_main_search_btn" />
     </RelativeLayout>
 
     <android.support.v4.view.ViewPager

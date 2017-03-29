@@ -35,10 +35,13 @@ abstract class ApiSubscriber<T>
      * 只要链式调用中抛出了异常都会走这个回调
      * 业务失败还是走onNext,此处的错误不关乎业务逻辑，直接弹出toast
      */
-    override fun onError(e: Throwable) {
+    override final fun onError(e: Throwable) {
         if (showLoading)
             mBaseView?.hideLoading()
-        mBaseView?.toast(getFailMsg(e))
+
+        val failMsg = getFailMsg(e)
+        if (null != failMsg)
+            mBaseView?.toast(failMsg)
 
         e.printStackTrace()
     }
