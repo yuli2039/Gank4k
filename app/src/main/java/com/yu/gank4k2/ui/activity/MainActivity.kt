@@ -19,7 +19,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : BaseActivity() {
 
-    val fragmentList: List<Fragment> = arrayListOf(RandomFragment(), CategoryFragment(), SettingFragment())
+    val fragmentList: List<Fragment> by lazy { arrayListOf(RandomFragment(), CategoryFragment(), SettingFragment()) }
 
     override val layoutId: Int
         get() = R.layout.activity_main
@@ -45,11 +45,11 @@ class MainActivity : BaseActivity() {
         stlMainTab.setViewPager(vpContent)
     }
 
-    private class RootPagerAdapter(fm: FragmentManager, val fmts: List<Fragment>)
-        : FragmentPagerAdapter(fm) {
+}
 
-        override fun getItem(position: Int): Fragment = fmts.get(position)
+private class RootPagerAdapter(fm: FragmentManager, val fmts: List<Fragment>) : FragmentPagerAdapter(fm) {
 
-        override fun getCount(): Int = fmts.size
-    }
+    override fun getItem(position: Int): Fragment = fmts.get(position)
+
+    override fun getCount(): Int = fmts.size
 }

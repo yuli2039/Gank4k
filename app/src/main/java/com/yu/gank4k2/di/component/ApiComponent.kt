@@ -4,6 +4,7 @@ package me.yu.drxx.di.component
 import com.yu.gank4k2.di.moudle.ApiModule
 import com.yu.gank4k2.di.moudle.AppModule
 import com.yu.gank4k2.ui.fragment.CategoryListFragment
+import com.yu.gank4k2.ui.fragment.RandomFragment
 import dagger.Component
 import me.yu.drxx.http.ApiService
 import javax.inject.Singleton
@@ -19,4 +20,5 @@ interface ApiComponent {
     fun apiService(): ApiService
 
     fun inject(fragment: CategoryListFragment)
+    fun inject(fragment: RandomFragment)
 }

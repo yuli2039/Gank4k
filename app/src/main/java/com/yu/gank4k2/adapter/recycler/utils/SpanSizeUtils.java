@@ -1,4 +1,4 @@
-package com.yu.gank4k2.base.adapter.recycler.utils;
+package com.yu.gank4k2.adapter.recycler.utils;
 
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;

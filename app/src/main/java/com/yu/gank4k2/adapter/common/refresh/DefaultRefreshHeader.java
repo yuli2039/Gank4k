@@ -1,4 +1,4 @@
-package com.yu.gank4k2.base.adapter.common.refresh;
+package com.yu.gank4k2.adapter.common.refresh;
 
 import android.content.Context;
 import android.util.AttributeSet;

@@ -1,4 +1,4 @@
-package com.yu.gank4k2.base.adapter.common.loadmore;
+package com.yu.gank4k2.adapter.common.loadmore;
 
 import android.view.View;
 

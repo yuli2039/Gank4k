@@ -1,12 +1,16 @@
-package com.yu.gank4k2.base.adapter.recycler;
+package com.yu.gank4k2.adapter.recycler;
 
 import android.content.Context;
 import android.view.LayoutInflater;
 
-import com.yu.gank4k2.base.adapter.common.ItemViewDelegate;
-import com.yu.gank4k2.base.adapter.common.ViewHolder;
+import com.yu.gank4k2.adapter.common.ItemViewDelegate;
+import com.yu.gank4k2.adapter.common.ViewHolder;
 
 import java.util.List;
+
+/**
+ * Created by yu on 2017/3/30.
+ */
 
 public abstract class RecyclerAdapter<T> extends MultiTypeRecyclerAdapter<T> {
     protected int mLayoutId;

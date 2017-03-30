@@ -8,6 +8,7 @@
 
     <com.ogaclejapan.smarttablayout.SmartTabLayout
         android:id="@+id/stlListTab"
+        android:background="@android:color/white"
         android:layout_width="match_parent"
         android:layout_height="@dimen/list_tab_height"
         app:stl_clickable="true"

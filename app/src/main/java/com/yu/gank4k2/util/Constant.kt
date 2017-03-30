@@ -9,3 +9,9 @@ object Constant {
     const val HTTP_TIME_OUT = 15000L
     const val HTTP_CACHE_SIZE = (1024 * 1024 * 10).toLong()
 }
+
+object CategoryType {
+    const val ANDROID = "Android"
+    const val IOS = "iOS"
+    const val GIRLS = "福利"
+}

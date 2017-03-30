@@ -1,4 +1,4 @@
-package com.yu.gank4k2.base.adapter.common;
+package com.yu.gank4k2.adapter.common;
 
 import android.graphics.Bitmap;
 import android.graphics.Typeface;

@@ -1,12 +1,12 @@
-package com.yu.gank4k2.base.adapter.recycler;
+package com.yu.gank4k2.adapter.recycler;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.yu.gank4k2.base.adapter.common.ItemViewDelegate;
-import com.yu.gank4k2.base.adapter.common.ItemViewDelegateManager;
+import com.yu.gank4k2.adapter.common.ItemViewDelegate;
+import com.yu.gank4k2.adapter.common.ItemViewDelegateManager;
 
 import java.util.List;
 

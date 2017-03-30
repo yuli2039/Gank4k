@@ -1,4 +1,4 @@
-package com.yu.gank4k2.base.adapter.recycler.wrapper;
+package com.yu.gank4k2.adapter.recycler.wrapper;
 
 import android.support.v4.util.SparseArrayCompat;
 import android.support.v7.widget.GridLayoutManager;
@@ -6,9 +6,9 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.yu.gank4k2.base.adapter.recycler.MultiTypeRecyclerAdapter;
-import com.yu.gank4k2.base.adapter.recycler.ViewHolder4r;
-import com.yu.gank4k2.base.adapter.recycler.utils.SpanSizeUtils;
+import com.yu.gank4k2.adapter.recycler.MultiTypeRecyclerAdapter;
+import com.yu.gank4k2.adapter.recycler.ViewHolder4r;
+import com.yu.gank4k2.adapter.recycler.utils.SpanSizeUtils;
 
 
 /**

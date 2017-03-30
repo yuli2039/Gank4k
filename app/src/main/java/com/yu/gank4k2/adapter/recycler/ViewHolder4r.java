@@ -1,4 +1,4 @@
-package com.yu.gank4k2.base.adapter.recycler;
+package com.yu.gank4k2.adapter.recycler;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -20,11 +20,10 @@ import android.widget.ProgressBar;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
-import com.yu.gank4k2.base.adapter.common.ViewHolder;
-
+import com.yu.gank4k2.adapter.common.ViewHolder;
 
 /**
- * ViewHolder for RecyclerView
+ * Created by yu on 2017/3/30.
  */
 public class ViewHolder4r extends RecyclerView.ViewHolder implements ViewHolder {
     private SparseArray<View> mViews;

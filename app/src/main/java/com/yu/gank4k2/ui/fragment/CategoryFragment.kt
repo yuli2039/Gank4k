@@ -13,11 +13,13 @@ import kotlinx.android.synthetic.main.fragment_category.*
  */
 class CategoryFragment : BaseFragment() {
 
-    val fragmentList: ArrayList<Fragment> = arrayListOf(
-            CategoryListFragment.newInstance(CategoryType.ANDROID),
-            CategoryListFragment.newInstance(CategoryType.IOS),
-            CategoryListFragment.newInstance(CategoryType.GIRLS)
-    )
+    val fragmentList: ArrayList<Fragment> by lazy {
+        arrayListOf<Fragment>(
+                CategoryListFragment.newInstance(CategoryType.ANDROID),
+                CategoryListFragment.newInstance(CategoryType.IOS),
+                CategoryListFragment.newInstance(CategoryType.GIRLS)
+        )
+    }
 
     override val layoutId: Int
         get() = R.layout.fragment_category
@@ -27,16 +29,15 @@ class CategoryFragment : BaseFragment() {
         vpList.adapter = ListAdapter(fragmentManager, fragmentList, stringArray)
         stlListTab.setViewPager(vpList)
     }
+}
 
-    private class ListAdapter(fm: FragmentManager, val fmts: List<Fragment>, val titles: Array<String>)
-        : FragmentPagerAdapter(fm) {
+class ListAdapter(fm: FragmentManager, val fmts: List<Fragment>, val titles: Array<String>)
+    : FragmentPagerAdapter(fm) {
 
-        override fun getItem(position: Int): Fragment = fmts.get(position)
+    override fun getItem(position: Int): Fragment = fmts.get(position)
 
-        override fun getCount(): Int = fmts.size
+    override fun getCount(): Int = fmts.size
 
-        override fun getPageTitle(position: Int): CharSequence {
-            return titles[position]
-        }
-    }
+    override fun getPageTitle(position: Int): CharSequence = titles[position]
+
 }

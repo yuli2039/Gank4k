@@ -8,9 +8,14 @@ import rx.Observable
 
 interface ApiService {
 
-    @GET("api/data/{type}/{pageNum}/{page}")
+    @GET("api/data/{type}/{pageSize}/{pageNum}")
     fun loadCategoryData(@Path("type") type: String,
-                         @Path("pageNum") pageNum: String,
-                         @Path("page") page: String)
+                         @Path("pageSize") pageSize: String,
+                         @Path("pageNum") pageNum: String)
+            : Observable<HttpResult<List<GankEntity>>>
+
+    @GET("api/random/data/{type}/{pageSize}")
+    fun loadRandomData(@Path("type") type: String,
+                       @Path("pageSize") pageSize: String)
             : Observable<HttpResult<List<GankEntity>>>
 }

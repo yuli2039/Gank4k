@@ -9,7 +9,7 @@ import rx.Observable
 /**
  * Created by yu on 2016/10/25.
  */
-interface ListContract {
+interface CategoryListContract {
     interface View : BaseView {
         fun onRefresh(data: List<GankEntity>)
         fun onLoadMore(data: List<GankEntity>)
