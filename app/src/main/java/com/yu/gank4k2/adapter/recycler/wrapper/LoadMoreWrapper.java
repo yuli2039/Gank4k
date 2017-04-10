@@ -26,8 +26,9 @@ public class LoadMoreWrapper extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
     private boolean isLoading;
     private boolean isNoMore;
+    private boolean hasScrolled;
 
-    public LoadMoreWrapper(RecyclerView.Adapter adapter,ILoadMore loadMoreView) {
+    public LoadMoreWrapper(RecyclerView.Adapter adapter, ILoadMore loadMoreView) {
         mInnerAdapter = adapter;
         mLoadMoreView = loadMoreView;
     }
@@ -36,7 +37,7 @@ public class LoadMoreWrapper extends RecyclerView.Adapter<RecyclerView.ViewHolde
         return mLoadMoreView != null && (position >= getRealItemCount());
     }
 
-    public RecyclerView.Adapter getInnerAdapter(){
+    public RecyclerView.Adapter getInnerAdapter() {
         return mInnerAdapter;
     }
 
@@ -155,15 +156,24 @@ public class LoadMoreWrapper extends RecyclerView.Adapter<RecyclerView.ViewHolde
                     }
 
                     if (layoutManager.getChildCount() > 0
+                            && hasScrolled
                             && lastVisibleItemPosition >= layoutManager.getItemCount() - 1
-                            && layoutManager.getItemCount() > layoutManager.getChildCount()
+//                            && layoutManager.getItemCount() > layoutManager.getChildCount()
                             && !isNoMore) {
 
                         isLoading = true;
                         mLoadMoreView.setState(LOADING);
                         mOnLoadMoreListener.onLoadMore();
                     }
+                } else if (state == RecyclerView.SCROLL_STATE_DRAGGING) {
+                    hasScrolled = false;
                 }
+            }
+
+            @Override
+            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+                hasScrolled = true;
             }
         });
     }

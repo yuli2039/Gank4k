@@ -5,17 +5,17 @@ import com.yu.gank4k2.base.BasePresenter
 import com.yu.gank4k2.rx.ApiSubscriber
 import com.yu.gank4k2.rx.DefaultTransformer
 import me.yu.drxx.entity.GankEntity
-import me.yu.drxx.mvp.CategoryListContract
-import me.yu.drxx.mvp.repository.CategoryListModel
+import me.yu.drxx.mvp.CategoryContract
+import me.yu.drxx.mvp.repository.CategoryModel
 import javax.inject.Inject
 
 /**
  * Created by yu on 2016/10/25.
  */
-class CategoryListPresenter
-@Inject constructor() : BasePresenter<CategoryListContract.View>(), CategoryListContract.Presenter {
+class CategoryPresenter
+@Inject constructor() : BasePresenter<CategoryContract.View>(), CategoryContract.Presenter {
 
-    @Inject lateinit var mModel: CategoryListModel
+    @Inject lateinit var mModel: CategoryModel
 
     var pageNum = 1
 

@@ -1,34 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:background="@color/C3"
-    android:layout_height="match_parent">
-
-    <RelativeLayout
-        android:id="@+id/rlTitle"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/main_tab_height"
-        android:background="@color/colorAccent">
-
-        <com.ogaclejapan.smarttablayout.SmartTabLayout
-            android:id="@+id/stlMainTab"
-            android:layout_width="@dimen/main_tab_width"
-            android:layout_height="match_parent"
-            android:layout_centerInParent="true"
-            app:stl_clickable="true"
-            app:stl_distributeEvenly="true"
-            app:stl_dividerThickness="@dimen/list_tab_0dp"
-            app:stl_indicatorThickness="@dimen/list_tab_0dp"
-            app:stl_overlineThickness="@dimen/list_tab_0dp"
-            app:stl_underlineThickness="@dimen/list_tab_0dp" />
-
-    </RelativeLayout>
-
-    <android.support.v4.view.ViewPager
-        android:id="@+id/vpContent"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/rlTitle" />
-
-</RelativeLayout>
+    android:id="@+id/mainContainer"
+    android:layout_height="match_parent"
+    android:background="@color/C3" />

@@ -13,7 +13,7 @@ abstract class BaseMvpActivity<P : BasePresenter<*>> : BaseActivity(), BaseView 
     @Inject lateinit var mPresenter: P
 
     override fun onDestroy() {
-        mPresenter.destory()
+        mPresenter.detachView()
         super.onDestroy()
     }
 

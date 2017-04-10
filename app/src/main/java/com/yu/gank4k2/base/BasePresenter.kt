@@ -13,14 +13,14 @@ abstract class BasePresenter<V : BaseView> {
     protected var mView: V? = null
     private val mCompositeSubscription: CompositeSubscription = CompositeSubscription()
 
-    fun setView(view: V) {
+    fun attachView(view: V) {
         this.mView = view
     }
 
     /**
      * should be called in onDestory
      */
-    fun destory() {
+    fun detachView() {
         this.mView = null
         onUnsubscribe()
     }

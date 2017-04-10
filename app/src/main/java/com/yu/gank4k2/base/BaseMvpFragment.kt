@@ -11,7 +11,7 @@ abstract class BaseMvpFragment<P : BasePresenter<*>> : BaseFragment(), BaseView 
     @Inject lateinit var mPresenter: P
 
     override fun onDestroy() {
-        mPresenter.destory()
+        mPresenter.detachView()
         super.onDestroy()
     }
 
