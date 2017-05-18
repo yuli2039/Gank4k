@@ -1,45 +1,31 @@
 package com.yu.gank4k2.rx
 
-
-import rx.Observable
-import rx.subjects.PublishSubject
-import rx.subjects.SerializedSubject
-import rx.subjects.Subject
+import io.reactivex.BackpressureStrategy
+import io.reactivex.Flowable
+import io.reactivex.processors.FlowableProcessor
+import io.reactivex.processors.PublishProcessor
+import io.reactivex.schedulers.Schedulers
 import java.util.*
 
 /**
- * RxBus
+ * Created by yu on 2017/5/3.
  */
 class RxBus private constructor() {
-    private val mBus: Subject<Any, Any>
+
+    private val mBus: FlowableProcessor<Any>
     private val mStickyEventMap: MutableMap<Class<*>, Any>
 
-    companion object {
-        val instance: RxBus
-            get() = InstanceHolder.INSTANCE
-    }
-
-    private object InstanceHolder {
-        val INSTANCE = RxBus()
-    }
-
     init {
-        mBus = SerializedSubject(PublishSubject.create<Any>())
+        mBus = PublishProcessor.create<Any>().toSerialized()
         mStickyEventMap = HashMap<Class<*>, Any>()
     }
 
-    /**
-     * 发送事件
-     */
-    fun post(event: Any) {
-        mBus.onNext(event)
+    fun post(obj: Any) {
+        mBus.onNext(obj)
     }
 
-    /**
-     * 根据传递的 eventType 类型返回特定类型(eventType)的 被观察者
-     */
-    fun <T> tObservable(eventType: Class<T>): Observable<T> {
-        return mBus.ofType(eventType)
+    fun <T> toFlowable(event: Class<T>): Flowable<T> {
+        return mBus.ofType(event).subscribeOn(Schedulers.io())
     }
 
     /**
@@ -55,13 +41,12 @@ class RxBus private constructor() {
     /**
      * 根据传递的 eventType 类型返回特定类型(eventType)的 被观察者
      */
-    fun <T> toObservableSticky(eventType: Class<T>): Observable<T> {
+    fun <T> toFlowableSticky(eventType: Class<T>): Flowable<T> {
         synchronized(mStickyEventMap) {
             val observable = mBus.ofType(eventType)
             val event = mStickyEventMap[eventType]
-
             if (event != null) {
-                return Observable.merge(observable, Observable.create { subscriber -> subscriber.onNext(eventType.cast(event)) })
+                return Flowable.merge(observable, Flowable.create({ e -> e.onNext(eventType.cast(event)) }, BackpressureStrategy.LATEST))
             } else {
                 return observable
             }
@@ -95,4 +80,12 @@ class RxBus private constructor() {
         }
     }
 
+    private object InstanceHolder {
+        val INSTANCE = RxBus()
+    }
+
+    companion object {
+        val default: RxBus
+            get() = InstanceHolder.INSTANCE
+    }
 }

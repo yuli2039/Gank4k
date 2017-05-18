@@ -1,12 +1,12 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
-    ext.kotlin_version = '1.1.1'
+    ext.kotlin_version = '1.1.2'
     repositories {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.0'
+        classpath 'com.android.tools.build:gradle:2.3.2'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath "org.jetbrains.kotlin:kotlin-android-extensions:$kotlin_version"
         classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8' //for dagger
@@ -30,20 +30,21 @@ task clean(type: Delete) {
 }
 
 ext {
-    kotlinVersion = "1.1.1"
-    supportLibVersion = "25.2.0"
-    okhttpVersion = "3.6.0"
+    kotlinVersion = "1.1.2"
+    supportLibVersion = "25.3.1"
+    okhttpVersion = "3.7.0"
     retrofitVersion = "2.2.0"
-    rxjavaVersion = "1.2.1"
-    rxAndroidVersion = "1.2.1"
-    rxBindingVersion = "1.0.1"
-    rxjava2Version = "2.0.1"
+
+    rxjava2Version = "2.1.0"
     rxAndroid2Version = "2.0.1"
+    rxLifecycle2Version = "2.0.1"
+    rxBinding2Version = "2.0.0"
+
     daggerVersion = "2.9"
     glideVersion = "3.7.0"
     butterKnifeVersion = "8.5.1"
     multidexVersion = "1.0.1"
-    rxPermissionVersion = "0.9.2@aar"
+    rxPermissionVersion = "0.9.4@aar"
     javaxAnnotationVersion = "10.0-b28"
 
     dependencies = [
@@ -56,23 +57,17 @@ ext {
             butterKnifeCompiler     : "com.jakewharton:butterknife-compiler:$butterKnifeVersion",
 
             // Rx
-            rxJava                  : "io.reactivex:rxjava:$rxjavaVersion",
-            rxAndroid               : "io.reactivex:rxandroid:$rxAndroidVersion",
-            rxPermission            : "com.tbruyelle.rxpermissions:rxpermissions:$rxPermissionVersion",
-
             rxJava2                 : "io.reactivex.rxjava2:rxjava:$rxjava2Version",
             rxAndroid2              : "io.reactivex.rxjava2:rxandroid:$rxAndroid2Version",
             rxPermission2           : "com.tbruyelle.rxpermissions2:rxpermissions:$rxPermissionVersion",
-
-            rxBinding               : "com.jakewharton.rxbinding:rxbinding:$rxBindingVersion",
+            rxBinding2              : "com.jakewharton.rxbinding2:rxbinding:$rxBinding2Version",
+            rxLifecycle2            : "com.trello.rxlifecycle2:rxlifecycle-components:$rxLifecycle2Version",
 
             // Http
             okhttp3                 : "com.squareup.okhttp3:okhttp:$okhttpVersion",
             okhttpLoggingInterceptor: "com.squareup.okhttp3:logging-interceptor:$okhttpVersion",
             retrofit                : "com.squareup.retrofit2:retrofit:$retrofitVersion",
             retrofitGsonConverter   : "com.squareup.retrofit2:converter-gson:$retrofitVersion",
-
-            retrofitRxjavaAdapter   : "com.squareup.retrofit2:adapter-rxjava:$retrofitVersion",
             retrofitRxjavaAdapter2  : "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion",
 
             glide                   : "com.github.bumptech.glide:glide:$glideVersion",

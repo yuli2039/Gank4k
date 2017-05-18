@@ -1,7 +1,6 @@
 package com.yu.gank4k2.base
 
 import android.os.Bundle
-import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,7 +8,7 @@ import android.view.ViewGroup
 /**
  * Created by yu on 2017/3/10.
  */
-abstract class BaseFragment : Fragment() {
+abstract class BaseFragment : com.trello.rxlifecycle2.components.support.RxFragment() {
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         injectComponent()

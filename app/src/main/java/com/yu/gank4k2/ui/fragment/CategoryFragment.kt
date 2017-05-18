@@ -88,7 +88,7 @@ class CategoryFragment : BaseMvpFragment<CategoryPresenter>(), CategoryContract.
     }
 
     override fun hideLoading() {
-        refreshLayout.isRefreshing = false
+        refreshLayout?.isRefreshing = false
         loadMoreWrapper?.loadMoreComplete()
     }
 }

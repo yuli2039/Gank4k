@@ -3,8 +3,8 @@ package me.yu.drxx.mvp
 import com.yu.gank4k2.base.BaseModel
 import com.yu.gank4k2.base.BaseView
 import com.yu.gank4k2.http.HttpResult
+import io.reactivex.Observable
 import me.yu.drxx.entity.GankEntity
-import rx.Observable
 
 /**
  * Created by yu on 2016/10/25.

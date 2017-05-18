@@ -1,13 +1,15 @@
 package com.yu.gank4k2.base
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import com.trello.rxlifecycle2.LifecycleTransformer
+import com.trello.rxlifecycle2.android.ActivityEvent
+import com.trello.rxlifecycle2.components.support.RxAppCompatActivity
 
 
 /**
  * @author yu
  */
-abstract class BaseActivity : AppCompatActivity() {
+abstract class BaseActivity : RxAppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,7 +22,7 @@ abstract class BaseActivity : AppCompatActivity() {
 
     protected abstract fun afterInitView()
 
-    open fun injectComponent(){
+    open fun injectComponent() {
 
     }
 

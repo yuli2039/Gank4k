@@ -1,10 +1,10 @@
 package me.yu.drxx.mvp.repository
 
 import com.yu.gank4k2.http.HttpResult
+import io.reactivex.Observable
 import me.yu.drxx.entity.GankEntity
 import me.yu.drxx.http.ApiService
 import me.yu.drxx.mvp.CategoryContract
-import rx.Observable
 import javax.inject.Inject
 
 /**

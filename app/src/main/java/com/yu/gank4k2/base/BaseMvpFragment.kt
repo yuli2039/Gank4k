@@ -1,6 +1,6 @@
 package com.yu.gank4k2.base
 
-import android.widget.Toast
+import com.trello.rxlifecycle2.LifecycleTransformer
 import javax.inject.Inject
 
 /**
@@ -25,10 +25,8 @@ abstract class BaseMvpFragment<P : BasePresenter<*>> : BaseFragment(), BaseView 
 
     }
 
-    override fun toast(msg: String) {
-        if (msg.length > 10)
-            Toast.makeText(activity.applicationContext, msg, Toast.LENGTH_LONG).show()
-        else
-            Toast.makeText(activity.applicationContext, msg, Toast.LENGTH_SHORT).show()
-    }
+    /**
+     * Observable生命周期绑定
+     */
+    override fun <T> bindLifecycle(): LifecycleTransformer<T> = bindToLifecycle()
 }
