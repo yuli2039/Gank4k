@@ -1,7 +1,6 @@
 package com.yu.gank4k2.rx
 
-import com.yu.gank4k2.App
-import com.yu.gank4k2.R
+import com.yu.gank4k2.http.ApiException
 import com.yu.gank4k2.http.HttpResult
 import com.yu.gank4k2.http.NetworkDisconnectException
 import com.yu.gank4k2.util.NetUtils
@@ -55,7 +54,7 @@ object RxUtils {
         return ObservableTransformer {
             it.flatMap {
                 if (it.isError)
-                    Observable.error<T>(NetworkDisconnectException())
+                    Observable.error<T>(ApiException(0x00, "服务端错误"))
                 else
                     Observable.just(it.results!!)
             }

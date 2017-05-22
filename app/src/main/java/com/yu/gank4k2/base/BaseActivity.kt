@@ -1,8 +1,6 @@
 package com.yu.gank4k2.base
 
 import android.os.Bundle
-import com.trello.rxlifecycle2.LifecycleTransformer
-import com.trello.rxlifecycle2.android.ActivityEvent
 import com.trello.rxlifecycle2.components.support.RxAppCompatActivity
 
 
